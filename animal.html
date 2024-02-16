@@ -38,7 +38,52 @@ function resolveForm (){
         out.innerHTML = "Values were not confirmed"
     }
 }
+
+
 </script>
+
+<form>
+    <label for="hiddenAnimal">The hidden animal type:</label>
+    <input type="password" id="hiddenAnimal" value="Chicken">
+
+    <br>
+
+    <label for="guessAnimal">Guess the animal:</label>
+    <input type="text" id="guessAnimal">
+
+    <br>
+
+    <button type="button" onclick="checkAnimal()">Check the guess</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+    // Global variables
+    var correct = 0;
+    var wrong = 0;
+
+    // Function to check the animal guess
+    function checkAnimal() {
+        // Get values from input elements
+        var hiddenAnimalValue = document.getElementById("hiddenAnimal").value;
+        var guessAnimalValue = document.getElementById("guessAnimal").value;
+
+        // Compare values
+        if (hiddenAnimalValue === guessAnimalValue) {
+            correct++;
+            alert("Ruff ruff");
+        } else {
+            wrong++;
+            alert("Grrrr");
+        }
+
+        // Update the result display
+        var resultElement = document.getElementById("result");
+        resultElement.innerHTML = "Correct: " + correct + " | Wrong: " + wrong;
+    }
+</script>
+
 
 </body>
 </html> 
