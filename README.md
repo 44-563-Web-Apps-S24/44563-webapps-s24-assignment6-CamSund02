@@ -2,3 +2,6 @@
 # WebApps-S24-Assignment-6
 Introduction to Java Script and DOM
 
+Hosted at [Animal](https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment6-CamSund02/animal)
+Hosted at [Discount](https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment6-CamSund02/discount)
+Hosted at [Packing](https://44-563-web-apps-s24.github.io/44563-webapps-s24-assignment6-CamSund02/packing)
