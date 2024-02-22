@@ -8,13 +8,13 @@
 <h2>Cameron packs for a trip</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="travelMonth">Enter travel month:</label>
+    <input type="text" id="travelMonth" value="May">
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="travelPrice">Enter price:</label>
+    <input type="text" id="travelPrice">
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <button type="button" onclick="updatePack()">Update the pack</button>
 </form>
 
 
@@ -22,18 +22,17 @@
 
 <script> 
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
+function updatePack() {
+    // Get values from input elements
+    let travelMonth = document.getElementById("travelMonth").value;
+    let travelPrice = document.getElementById("travelPrice").value;
+
+    // Set properties of my_pack with the values from input elements
+    my_pack.month = travelMonth;
+    my_pack.price = travelPrice;
+
+    // Replace innerHTML with my_pack
+    document.getElementById("result").innerHTML = JSON.stringify(my_pack);
 }
 
 
