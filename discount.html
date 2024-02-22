@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
- <head>
+<head>
     <title>Discount</title>
- </head>
+</head>
 <body>
 
 <h2>Discount Calculations</h2>
@@ -25,31 +25,27 @@
 <div>
     <button type="button" onclick="discount()">Show Total</button>
 </div>
-<p id="result">
 
-</p>
-
-
+<p id="result"></p>
 
 <script> 
 
-function discount (){
+function discount() {
     var price = document.getElementById("price").value;
     var count = document.getElementById("count").value;
     var reductions = document.getElementById("reductions").value;
 
     let myOutput = "";
-    let count = 0;
-    for (let i=0; i<5; i++){
-        var price_after_discount = (price*reductions)/100;
 
-        
-        reductions+=1
-    }    
+    for (let i = 0; i < 5; i++) {
+        var price_after_discount = (price * (100 - reductions) / 100) * count;        
+        myOutput += `${reductions}% is ${price_after_discount}; `;
+        reductions++;
+    }
+
+    document.getElementById("result").innerHTML = "Totals are: " + myOutput;
 }
 </script>
 
-
-
 </body>
-</html> 
+</html>
